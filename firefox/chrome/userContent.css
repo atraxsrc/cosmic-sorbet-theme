@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Sorbet - userContent.css
+   Ported from the DarkGold baseline, recoloured for the COSMIC Sorbet palette
+
+   New tab / home / private pages only:
+     - mint accent and focus, lavender links
+     - mint focus ring on shortcut tiles, mint personalize button
+     - shortcut artwork hidden (tiles stay, icons go blank)
+   No size / position changes.
+
+   Install:  chrome/userContent.css   (same pref + restart as userChrome.css)
+   ========================================================================== */
+
+@-moz-document url-prefix("about:newtab"),
+               url-prefix("about:home"),
+               url-prefix("about:privatebrowsing") {
+
+  :root {
+    --newtab-primary-action-background: #B2FFF3 !important;
+    --newtab-primary-action-background-dimmed: rgba(178, 255, 243, 0.25) !important;
+
+    --color-accent-primary: #B2FFF3 !important;
+    --color-accent-primary-hover: #D1FFF8 !important;
+    --color-accent-primary-active: #B2FFF3 !important;
+
+    --newtab-focus-border: #B2FFF3 !important;
+    --newtab-focus-outline: #B2FFF3 !important;
+    --newtab-textbox-focus-color: #B2FFF3 !important;
+
+    --in-content-accent-color: #B2FFF3 !important;
+    --in-content-accent-color-active: #BAF7B5 !important;
+    --in-content-focus-outline-color: #B2FFF3 !important;
+
+    --link-color: #DFBAFF !important;
+    --link-color-hover: #FFFFFF !important;
+
+    --focus-outline-color: #B2FFF3 !important;
+    --focus-outline: 2px solid #B2FFF3 !important;
+    --newtab-button-focus-border: #B2FFF3 !important;
+    --button-background-color: #B2FFF3 !important;
+    --button-text-color: #05080A !important;
+  }
+
+  .top-site-outer:is(:focus, :focus-visible, .active) .tile,
+  .top-site-outer .top-site-button:focus .tile,
+  .top-site-outer .top-site-button:focus-visible .tile {
+    outline: 2px solid #B2FFF3 !important;
+    border-color: #B2FFF3 !important;
+  }
+
+  .personalize-button {
+    background-color: #B2FFF3 !important;
+    color: #05080A !important;
+  }
+
+  /* Hide shortcut artwork so tiles stay blank */
+  .top-site-icon,
+  .top-site-icon.rich-icon,
+  .top-site-icon.default-icon,
+  .screenshot,
+  .screenshot.active,
+  .letter-fallback {
+    background-image: none !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+  }
+}

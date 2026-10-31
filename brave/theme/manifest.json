@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Cosmic Sorbet",
+  "version": "1.0",
+  "description": "Pitch theme from the COSMIC Sorbet rice: lime icons, one mint accent.",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "frame": [5, 8, 10],
+      "frame_inactive": [5, 8, 10],
+      "frame_incognito": [5, 8, 10],
+      "frame_incognito_inactive": [5, 8, 10],
+      "background_tab": [5, 8, 10],
+      "background_tab_inactive": [5, 8, 10],
+      "background_tab_incognito": [5, 8, 10],
+      "background_tab_incognito_inactive": [5, 8, 10],
+      "toolbar": [18, 16, 25],
+      "tab_text": [178, 255, 243],
+      "tab_background_text": [186, 247, 181],
+      "tab_background_text_inactive": [186, 247, 181],
+      "tab_background_text_incognito": [186, 247, 181],
+      "tab_background_text_incognito_inactive": [186, 247, 181],
+      "bookmark_text": [255, 246, 255],
+      "toolbar_button_icon": [186, 247, 181],
+      "omnibox_background": [40, 33, 58],
+      "omnibox_text": [255, 246, 255],
+      "ntp_background": [5, 8, 10],
+      "ntp_text": [255, 246, 255],
+      "ntp_link": [178, 255, 243]
+    }
+  }
+}

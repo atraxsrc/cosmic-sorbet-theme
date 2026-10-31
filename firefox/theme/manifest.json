@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Cosmic Sorbet",
+  "version": "1.0",
+  "description": "Pitch theme from the COSMIC Sorbet rice: lime icons, one mint accent.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{d33c2e3b-fce4-448c-a26d-11caded7405f}"
+    }
+  },
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "toolbar": "#121019",
+      "toolbar_text": "#fff6ff",
+      "frame": "#05080A",
+      "tab_background_text": "#baf7b5",
+      "tab_text": "#b2fff3",
+      "toolbar_field": "#28213a",
+      "toolbar_field_text": "#fff6ff",
+      "toolbar_field_border_focus": "#B2FFF3",
+      "toolbar_field_highlight": "#B2FFF3",
+      "toolbar_field_highlight_text": "#05080A",
+      "tab_line": "#B2FFF3",
+      "popup": "#121019",
+      "popup_text": "#fff6ff",
+      "button_background_active": "#B2FFF3",
+      "button_background_hover": "#28213a",
+      "frame_inactive": "#05080A",
+      "icons_attention": "#B2FFF3",
+      "icons": "#baf7b5",
+      "ntp_background": "#05080A",
+      "ntp_text": "#fff6ff",
+      "popup_border": "#DFBAFF",
+      "popup_highlight_text": "#05080A",
+      "popup_highlight": "#B2FFF3",
+      "sidebar_border": "#28213a",
+      "sidebar_highlight_text": "#05080A",
+      "sidebar_highlight": "#B2FFF3",
+      "sidebar_text": "#fff6ff",
+      "tab_loading": "#B2FFF3"
+    }
+  }
+}
