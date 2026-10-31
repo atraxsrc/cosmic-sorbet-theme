@@ -24,4 +24,4 @@ fi
 
 echo
 echo "Done. In Claude Desktop press Ctrl+Shift+T and pick cosmic-sorbet."
-echo "Sorbet is dark only; Settings -> Appearance changes nothing."
+echo "Sorbet is the dark half; Settings -> Appearance -> Light shows Sorbet Day."
