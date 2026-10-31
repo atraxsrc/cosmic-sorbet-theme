@@ -1,0 +1,41 @@
+# 256-colour codes nearest the Sorbet palette on pitch (lsd 1.0.0 does not accept
+# #hex here): 159 mint, 217 rose, 222 peach, 157 lime, 229 lemon,
+# 183 lavender, 246 smoke, 241 ash.
+user: 229
+group: 246
+permission:
+  read: 246
+  write: 229
+  exec: 159
+  exec-sticky: 159
+  no-access: 241
+  octal: 183
+  acl: 183
+  context: 183
+date:
+  hour-old: 229
+  day-old: 157
+  older: 241
+size:
+  none: 241
+  small: 157
+  medium: 229
+  large: 217
+inode:
+  valid: 157
+  invalid: 217
+links:
+  valid: 183
+  invalid: 217
+tree-edge: 241
+git-status:
+  default: 241
+  unmodified: 241
+  ignored: 241
+  new-in-index: 157
+  new-in-workdir: 157
+  typechange: 229
+  deleted: 217
+  renamed: 183
+  modified: 222
+  conflicted: 217
