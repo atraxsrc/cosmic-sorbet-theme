@@ -1,0 +1,80 @@
+# Sorbet for Alacritty, part of cosmic-sorbet-theme (MIT).
+# Colours follow the COSMIC Terminal scheme (cosmic-term/).
+#
+# Install: ./alacritty/install.sh puts this in ~/.config/alacritty/themes/,
+# then in ~/.config/alacritty/alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/themes/sorbet.toml"]
+# (Alacritty 0.13: a top-level `import = [...]` line instead.)
+
+[colors.primary]
+background = "#05080A"
+foreground = "#FFF6FF"
+bright_foreground = "#FFFFFF"
+dim_foreground = "#8A8D97"
+
+[colors.cursor]
+text = "#05080A"
+cursor = "#B2FFF3"
+
+[colors.vi_mode_cursor]
+text = "#05080A"
+cursor = "#FFC79B"
+
+[colors.selection]
+text = "CellForeground"
+background = "#28213A"
+
+[colors.search.matches]
+foreground = "#05080A"
+background = "#FFF6C3"
+
+[colors.search.focused_match]
+foreground = "#05080A"
+background = "#B2FFF3"
+
+[colors.hints.start]
+foreground = "#05080A"
+background = "#FFC79B"
+
+[colors.hints.end]
+foreground = "#05080A"
+background = "#FFF6C3"
+
+[colors.footer_bar]
+foreground = "#FFF6FF"
+background = "#121019"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.normal]
+black   = "#020304"
+red     = "#FF9FBC"
+green   = "#BAF7B5"
+yellow  = "#FFF6C3"
+blue    = "#B2FFF3"
+magenta = "#FFC79B"
+cyan    = "#8ED9CF"
+white   = "#F3CEFF"
+
+[colors.bright]
+black   = "#5E616C"
+red     = "#FFC8D8"
+green   = "#D8FAD5"
+yellow  = "#FFFBE2"
+blue    = "#D1FFF8"
+magenta = "#FFDEC4"
+cyan    = "#DFBAFF"
+white   = "#FFFFFF"
+
+[colors.dim]
+black   = "#05080A"
+red     = "#FF588A"
+green   = "#7EF075"
+yellow  = "#FFEA71"
+blue    = "#7F86B5"
+magenta = "#FF9949"
+cyan    = "#68CCBF"
+white   = "#A9ACB6"

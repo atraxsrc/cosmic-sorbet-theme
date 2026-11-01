@@ -1,0 +1,243 @@
+/**
+ * @name Cosmic Sorbet
+ * @author atraxsrc
+ * @description Sorbet (dark) / Sorbet Day (light), the COSMIC rice pair.
+ * @version 1.0.0
+ * @source https://github.com/atraxsrc/cosmic-sorbet-theme
+ */
+
+/* cosmic-sorbet - Discord theme for Vencord / Vesktop (MIT). Only the colour
+ * variables: Discord's layout stays. With Appearance -> Theme -> "Sync with
+ * computer" it follows COSMIC's Dark / Light toggle between the two halves.
+ * The same file ships in both repos.
+ *
+ * Install: ./discord/install.sh copies it to ~/.config/Vencord/themes/ and
+ * ~/.config/vesktop/themes/, then Settings -> Vencord -> Themes -> tick it.
+ * Colours come from the rices' cosmic/*.ron palettes; edit the palette,
+ * not this file. */
+
+.theme-dark, .theme-darker, .theme-midnight {
+  /* Sorbet */
+  --background-primary: #05080A;
+  --background-secondary: #121019;
+  --background-secondary-alt: #1A1727;
+  --background-tertiary: #020304;
+  --background-accent: #1A1727;
+  --background-floating: #121019;
+  --background-mobile-primary: #05080A;
+  --background-mobile-secondary: #121019;
+  --background-modifier-hover: #12101999;
+  --background-modifier-active: #1A1727;
+  --background-modifier-selected: #1A1727;
+  --background-modifier-accent: #28213A;
+  --background-message-hover: #12101980;
+  --background-mentioned: #B2FFF320;
+  --background-mentioned-hover: #B2FFF330;
+  --channeltextarea-background: #121019;
+  --deprecated-card-bg: #121019;
+  --deprecated-quickswitcher-input-background: #121019;
+  --input-background: #121019;
+  --modal-background: #05080A;
+  --modal-footer-background: #121019;
+  --activity-card-background: #121019;
+
+  /* 2025 layout names */
+  --bg-base-primary: #05080A;
+  --bg-base-secondary: #121019;
+  --bg-base-tertiary: #020304;
+  --bg-surface-raised: #121019;
+  --bg-surface-overlay: #1A1727;
+  --bg-mod-faint: #12101966;
+  --bg-mod-subtle: #1A172799;
+  --bg-mod-strong: #28213A;
+  --background-base-low: #05080A;
+  --background-base-lower: #020304;
+  --background-base-lowest: #020304;
+  --background-surface-high: #121019;
+  --background-surface-higher: #1A1727;
+  --background-surface-highest: #28213A;
+  --border-subtle: #28213A;
+  --border-normal: #5E616C;
+  --border-strong: #8A8D97;
+  --border-faint: #1A1727;
+
+  --text-normal: #FFF6FF;
+  --text-muted: #DFBAFF;
+  --text-link: #B2FFF3;
+  --text-link-low-saturation: #B2FFF3;
+  --text-positive: #BAF7B5;
+  --text-warning: #FFC79B;
+  --text-danger: #FF9FBC;
+  --text-brand: #B2FFF3;
+  --header-primary: #FFF6FF;
+  --header-secondary: #DFBAFF;
+  --interactive-normal: #DFBAFF;
+  --interactive-hover: #FFF6FF;
+  --interactive-active: #FFFFFF;
+  --interactive-muted: #5E616C;
+  --channels-default: #DFBAFF;
+  --text-default: #FFF6FF;
+  --text-secondary: #DFBAFF;
+  --text-tertiary: #8A8D97;
+  --text-strong: #FFFFFF;
+  --text-feedback-positive: #BAF7B5;
+  --text-feedback-warning: #FFC79B;
+  --text-feedback-critical: #FF9FBC;
+  --text-primary: #FFF6FF;
+
+  --brand-500: #B2FFF3;
+  --brand-560: #B2FFF3;
+  --brand-600: #FF588A;
+  --brand-experiment: #B2FFF3;
+  --brand-experiment-560: #B2FFF3;
+  --brand-experiment-600: #FF588A;
+  --control-brand-foreground: #B2FFF3;
+  --control-brand-foreground-new: #B2FFF3;
+  --mention-foreground: #B2FFF3;
+  --mention-background: #B2FFF320;
+  --status-positive: #BAF7B5;
+  --status-positive-background: #BAF7B5;
+  --status-positive-text: #05080A;
+  --status-warning: #FFC79B;
+  --status-warning-background: #FFC79B;
+  --status-warning-text: #05080A;
+  --status-danger: #FF9FBC;
+  --status-danger-background: #FF9FBC;
+  --status-danger-text: #05080A;
+  --info-positive-foreground: #BAF7B5;
+  --info-warning-foreground: #FFC79B;
+  --info-danger-foreground: #FF9FBC;
+  --button-positive-background: #BAF7B5;
+  --button-positive-background-hover: #D8FAD5;
+  --button-danger-background: #FF9FBC;
+  --button-danger-background-hover: #FF9FBC;
+  --button-secondary-background: #1A1727;
+  --button-secondary-background-hover: #28213A;
+  --button-secondary-background-active: #5E616C;
+  --button-outline-brand-border: #B2FFF3;
+  --button-outline-brand-text: #B2FFF3;
+
+  --scrollbar-auto-thumb: #5E616C;
+  --scrollbar-auto-track: #05080A;
+  --scrollbar-thin-thumb: #5E616C;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-scrollbar-color-thumb: #5E616C;
+  --scrollbar-auto-scrollbar-color-track: #05080A;
+  --focus-primary: #B2FFF3;
+  --spoiler-background: #1A1727;
+  --spoiler-hover-background: #28213A;
+  --text-code: #BAF7B5;
+}
+
+.theme-light {
+  /* Sorbet Day */
+  --background-primary: #E9E2E9;
+  --background-secondary: #F4EEF4;
+  --background-secondary-alt: #E0D6E0;
+  --background-tertiary: #E0D6E0;
+  --background-accent: #E0D6E0;
+  --background-floating: #F4EEF4;
+  --background-mobile-primary: #E9E2E9;
+  --background-mobile-secondary: #F4EEF4;
+  --background-modifier-hover: #F4EEF499;
+  --background-modifier-active: #E0D6E0;
+  --background-modifier-selected: #E0D6E0;
+  --background-modifier-accent: #D4CAD4;
+  --background-message-hover: #F4EEF480;
+  --background-mentioned: #1C685C20;
+  --background-mentioned-hover: #1C685C30;
+  --channeltextarea-background: #F4EEF4;
+  --deprecated-card-bg: #F4EEF4;
+  --deprecated-quickswitcher-input-background: #F4EEF4;
+  --input-background: #F4EEF4;
+  --modal-background: #E9E2E9;
+  --modal-footer-background: #F4EEF4;
+  --activity-card-background: #F4EEF4;
+
+  /* 2025 layout names */
+  --bg-base-primary: #E9E2E9;
+  --bg-base-secondary: #F4EEF4;
+  --bg-base-tertiary: #E0D6E0;
+  --bg-surface-raised: #F4EEF4;
+  --bg-surface-overlay: #E0D6E0;
+  --bg-mod-faint: #F4EEF466;
+  --bg-mod-subtle: #E0D6E099;
+  --bg-mod-strong: #D4CAD4;
+  --background-base-low: #E9E2E9;
+  --background-base-lower: #E0D6E0;
+  --background-base-lowest: #E0D6E0;
+  --background-surface-high: #F4EEF4;
+  --background-surface-higher: #E0D6E0;
+  --background-surface-highest: #D4CAD4;
+  --border-subtle: #D4CAD4;
+  --border-normal: #D4CAD4;
+  --border-strong: #635F63;
+  --border-faint: #E0D6E0;
+
+  --text-normal: #1B1A1B;
+  --text-muted: #684488;
+  --text-link: #1C685C;
+  --text-link-low-saturation: #1C685C;
+  --text-positive: #2E6B29;
+  --text-warning: #895125;
+  --text-danger: #963653;
+  --text-brand: #1C685C;
+  --header-primary: #1B1A1B;
+  --header-secondary: #684488;
+  --interactive-normal: #684488;
+  --interactive-hover: #1B1A1B;
+  --interactive-active: #FFFFFF;
+  --interactive-muted: #959295;
+  --channels-default: #684488;
+  --text-default: #1B1A1B;
+  --text-secondary: #684488;
+  --text-tertiary: #635F63;
+  --text-strong: #FFFFFF;
+  --text-feedback-positive: #2E6B29;
+  --text-feedback-warning: #895125;
+  --text-feedback-critical: #963653;
+  --text-primary: #1B1A1B;
+
+  --brand-500: #1C685C;
+  --brand-560: #1C685C;
+  --brand-600: #713A4A;
+  --brand-experiment: #1C685C;
+  --brand-experiment-560: #1C685C;
+  --brand-experiment-600: #713A4A;
+  --control-brand-foreground: #1C685C;
+  --control-brand-foreground-new: #1C685C;
+  --mention-foreground: #1C685C;
+  --mention-background: #1C685C20;
+  --status-positive: #2E6B29;
+  --status-positive-background: #2E6B29;
+  --status-positive-text: #E9E2E9;
+  --status-warning: #895125;
+  --status-warning-background: #895125;
+  --status-warning-text: #E9E2E9;
+  --status-danger: #963653;
+  --status-danger-background: #963653;
+  --status-danger-text: #E9E2E9;
+  --info-positive-foreground: #2E6B29;
+  --info-warning-foreground: #895125;
+  --info-danger-foreground: #963653;
+  --button-positive-background: #2E6B29;
+  --button-positive-background-hover: #2E6B29;
+  --button-danger-background: #963653;
+  --button-danger-background-hover: #963653;
+  --button-secondary-background: #E0D6E0;
+  --button-secondary-background-hover: #D4CAD4;
+  --button-secondary-background-active: #D4CAD4;
+  --button-outline-brand-border: #1C685C;
+  --button-outline-brand-text: #1C685C;
+
+  --scrollbar-auto-thumb: #D4CAD4;
+  --scrollbar-auto-track: #E9E2E9;
+  --scrollbar-thin-thumb: #D4CAD4;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-scrollbar-color-thumb: #D4CAD4;
+  --scrollbar-auto-scrollbar-color-track: #E9E2E9;
+  --focus-primary: #1C685C;
+  --spoiler-background: #E0D6E0;
+  --spoiler-hover-background: #D4CAD4;
+  --text-code: #2E6B29;
+}

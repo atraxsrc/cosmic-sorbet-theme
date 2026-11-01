@@ -60,6 +60,13 @@ it with pitch text on top.
 
 ```
 .
+├── alacritty
+│   ├── sorbet.toml              # Alacritty colour scheme
+│   └── install.sh
+├── bat
+│   ├── Sorbet.tmTheme           # bat syntax theme (delta uses it too)
+│   ├── config                   # --theme="Sorbet"
+│   └── install.sh
 ├── brave
 │   ├── theme                    # Chromium theme (manifest + icons), Load unpacked
 │   └── README.md
@@ -82,6 +89,21 @@ it with pitch text on top.
 │   ├── install.sh
 │   ├── uninstall.sh
 │   └── README.md
+├── delta
+│   ├── sorbet.gitconfig         # delta (git pager) colours, [include] it from ~/.gitconfig
+│   └── install.sh
+├── discord
+│   ├── cosmic-sorbet.theme.css  # Vencord / Vesktop theme, Sorbet (dark) + Sorbet Day (light)
+│   └── install.sh
+├── ghostty
+│   ├── Sorbet                   # Ghostty theme
+│   └── install.sh
+├── gtk
+│   ├── sorbet.css               # GTK 3 / 4 named colours for non-COSMIC apps
+│   └── install.sh
+├── helix
+│   ├── sorbet.toml              # Helix theme
+│   └── install.sh
 ├── icons
 │   └── install.sh               # Cosmic-Sorbet icon pack from cosmic-icon-themes
 ├── fastfetch
@@ -95,11 +117,26 @@ it with pitch text on top.
 │   │   └── userContent.css      # new tab accent
 │   ├── install.sh
 │   └── README.md
+├── kitty
+│   ├── Sorbet.conf              # kitty colour scheme
+│   └── install.sh
+├── lazygit
+│   ├── sorbet.yml               # lazygit colours only, stacked on your config.yml
+│   └── install.sh
 ├── lsd
 │   ├── config.yaml              # theme: custom
 │   ├── colors.yaml              # permission / size / date / git columns
 │   └── install.sh
 ├── nvim                         # Neovim colorscheme, LazyVim spec, RON syntax, install.sh
+├── obsidian
+│   ├── cosmic-sorbet.css        # CSS snippet, Sorbet (dark) + Sorbet Day (light)
+│   └── install.sh
+├── qt
+│   ├── Sorbet.conf              # qt5ct / qt6ct colour scheme
+│   └── install.sh
+├── starship
+│   ├── starship.toml            # prompt, palette colours, clock on the right
+│   └── install.sh
 ├── telegram
 │   ├── colors.tdesktop-theme    # Telegram Desktop colour scheme (source)
 │   ├── cosmic-sorbet.tdesktop-theme # built theme, open this in Telegram
@@ -112,8 +149,11 @@ it with pitch text on top.
 ├── scripts
 │   ├── update_system.sh         # nala + flatpak, mint / lime ANSI
 │   └── switch.sh                # make this the active rice (see Switching rice)
+├── wezterm
+│   ├── sorbet.lua               # WezTerm colours, config.colors = require("sorbet")
+│   └── install.sh
 ├── zsh
-│   ├── sorbet.zsh                   # LS_COLORS, highlighting colours, aliases, starship
+│   ├── sorbet.zsh                   # LS_COLORS, highlighting colours, aliases, starship, lazygit
 │   └── install.sh
 ├── assets
 │   ├── cursors/                 # cursor preview
@@ -317,6 +357,90 @@ own theme.
 
 ---
 
+## GTK and Qt apps
+
+COSMIC colours GTK apps itself when Appearance → **Apply theme to GNOME apps**
+is on (the baseline config turns it on). `gtk/sorbet.css` is the same palette
+pinned by hand for GTK 3 and GTK 4 / libadwaita apps: windows and lists on
+![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`, cards, popovers and dialogs on ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`, text in ![#FFF6FF](https://placehold.co/12x12/fff6ff/fff6ff.png) `#FFF6FF`, selection
+and accent in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3` with ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A` text on it, ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` for
+success and ![#FFC79B](https://placehold.co/12x12/ffc79b/ffc79b.png) `#FFC79B` for warnings. It only sets the named colours, so
+widgets keep their stock shapes, and it also works where COSMIC's toggle does
+not reach (another desktop, Flatpak apps given access to `~/.config/gtk-4.0`).
+
+```bash
+./gtk/install.sh
+```
+
+It copies the file to `~/.config/gtk-3.0/` and `~/.config/gtk-4.0/` and adds
+`@import url("sorbet.css");` to `gtk.css` there, after COSMIC's own import so
+these colours win (backup in `gtk.css.bak`); another rice's import is
+commented out. Restart GTK apps.
+
+`qt/Sorbet.conf` is a colour scheme for [qt5ct](https://github.com/desktop-app/qt5ct)
+/ [qt6ct](https://github.com/trialuser02/qt6ct): windows on ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`, text
+fields and lists on ![#020304](https://placehold.co/12x12/020304/020304.png) `#020304`, buttons and tooltips on ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`, text in
+![#FFF6FF](https://placehold.co/12x12/fff6ff/fff6ff.png) `#FFF6FF`, ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3` for the highlight and links, placeholders in ![#8A8D97](https://placehold.co/12x12/8a8d97/8a8d97.png) `#8A8D97`,
+disabled text in ![#5E616C](https://placehold.co/12x12/5e616c/5e616c.png) `#5E616C`.
+
+```bash
+./qt/install.sh
+# qt6ct → Appearance → Color scheme → Sorbet, Palette: Custom → Apply
+```
+
+Qt apps read it with `QT_QPA_PLATFORMTHEME=qt6ct` (or `qt5ct`) in the
+environment; `~/.config/environment.d/` or your `~/.zshrc` is the place.
+
+Text and secondary text read at 10.5:1 or better on the window, container and
+field colours; disabled, placeholder and dim text, like comments elsewhere in
+the rice, at 3.1:1.
+
+---
+
+## Obsidian
+
+`obsidian/cosmic-sorbet.css` is a CSS snippet with both halves of the pair:
+Sorbet in dark mode, Sorbet Day in light mode, so with Settings →
+Appearance → Base color scheme → **Adapt to system** Obsidian follows COSMIC's
+Dark / Light toggle. Editor on ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`, sidebars on ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`, text in ![#FFF6FF](https://placehold.co/12x12/fff6ff/fff6ff.png) `#FFF6FF`,
+links and accent in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, headings coloured like Neovim's
+(![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3` / ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3` / ![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF`), code and checkboxes in ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5`, tags
+in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`. The same file ships in cosmic-sorbetday-theme.
+
+```bash
+./obsidian/install.sh ~/path/to/vault
+# Settings → Appearance → CSS snippets → cosmic-sorbet
+```
+
+It copies the file into the vault's `.obsidian/snippets/`. Snippets are per
+vault, so run it once per vault.
+
+---
+
+## Discord
+
+`discord/cosmic-sorbet.theme.css` is a theme for [Vencord](https://vencord.dev/)
+and [Vesktop](https://github.com/Vencord/Vesktop), colours only: chat on
+![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`, sidebars and inputs on ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`, server list on ![#020304](https://placehold.co/12x12/020304/020304.png) `#020304`, text in
+![#FFF6FF](https://placehold.co/12x12/fff6ff/fff6ff.png) `#FFF6FF`, channel names in ![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF`, accent, mentions and links in
+![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` for online and positive, ![#FFC79B](https://placehold.co/12x12/ffc79b/ffc79b.png) `#FFC79B` for
+warnings. The light half is Sorbet Day and the dark half Sorbet, so
+with Appearance → Theme → **Sync with computer** it follows COSMIC's toggle.
+The same file ships in cosmic-sorbetday-theme.
+
+```bash
+./discord/install.sh
+# Settings → Vencord → Themes → Cosmic Sorbet
+```
+
+It copies the file into `~/.config/Vencord/themes/` and
+`~/.config/vesktop/themes/`, whichever exist. Discord renames its CSS
+variables now and then; the file sets both the long-standing names and the
+2025 `--bg-*` set. Text on the surfaces is 10.5:1 or better; the text on
+Discord's own accent-coloured buttons stays its white, at 1.1:1.
+
+---
+
 ## Cursor
 
 **Oxygen** cursors recoloured to the icon colours, one per folder colour of the
@@ -363,12 +487,125 @@ Makes this the active rice, coming from any other `cosmic-*-theme` rice. See
 Need a [Nerd Font](https://www.nerdfonts.com/) in the terminal for the icons
 (Maple Mono NFM in the baseline above).
 
+### kitty, Alacritty, WezTerm, Ghostty
+
+The COSMIC Terminal scheme for other terminals, one file each with the same
+sixteen ANSI colours, text in ![#FFF6FF](https://placehold.co/12x12/fff6ff/fff6ff.png) `#FFF6FF`, the cursor in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3` and the
+selection on ![#28213A](https://placehold.co/12x12/28213a/28213a.png) `#28213A`. Each installer copies the file next to that terminal's
+config and backs up what it replaces; the one include line you add is
+printed, and is in the comment at the top of each file:
+
+```bash
+./kitty/install.sh        # ~/.config/kitty/themes/Sorbet.conf       kitty.conf:     include themes/Sorbet.conf
+./alacritty/install.sh    # ~/.config/alacritty/themes/sorbet.toml   alacritty.toml: [general] import = ["~/.config/alacritty/themes/sorbet.toml"]
+./wezterm/install.sh      # ~/.config/wezterm/sorbet.lua             wezterm.lua:    config.colors = require("sorbet")
+./ghostty/install.sh      # ~/.config/ghostty/themes/Sorbet          config:         theme = Sorbet
+```
+
+Ghostty and WezTerm can follow COSMIC's Dark / Light toggle once the Sorbet Day
+half is installed from its repo as well: `theme = dark:Sorbet,light:SorbetDay` in
+Ghostty, and in WezTerm
+
+```lua
+local dark = (wezterm.gui and wezterm.gui.get_appearance() or "Dark"):find("Dark")
+config.colors = require(dark and "sorbet" or "sorbetday")
+```
+
+kitty and Alacritty have no such switch; include the other file instead.
+
+### starship
+
+`starship/starship.toml` is close to the defaults with the palette declared
+once as `[palettes.sorbet]` and used by name: the directory in ![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF`,
+the branch in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`, ![#FFC79B](https://placehold.co/12x12/ffc79b/ffc79b.png) `#FFC79B` for a dirty tree, a ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` prompt
+character that turns ![#FF9FBC](https://placehold.co/12x12/ff9fbc/ff9fbc.png) `#FF9FBC` after a failed command, a dim `HH:MM` clock on
+the right. Modules it does not style keep their defaults, which use the ANSI
+slots the COSMIC Terminal scheme colours. `zsh/sorbet.zsh` already runs
+`starship init`. `install.sh` backs up any existing `~/.config/starship.toml`
+to `starship.toml.bak`.
+
+```bash
+./starship/install.sh
+```
+
+### bat
+
+`bat/Sorbet.tmTheme` is a syntax theme coloured the way Neovim is in this
+rice: keywords in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, strings in ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5`, functions in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`, numbers
+in ![#FFC79B](https://placehold.co/12x12/ffc79b/ffc79b.png) `#FFC79B`, types in ![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF`, imports and escapes in ![#B572EF](https://placehold.co/12x12/b572ef/b572ef.png) `#B572EF`, italic
+comments in ![#5E616C](https://placehold.co/12x12/5e616c/5e616c.png) `#5E616C`, on the editor background ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`. `zsh/sorbet.zsh`
+aliases `cat` to bat. `install.sh` copies the theme to `~/.config/bat/themes/`,
+rebuilds bat's cache so bat and delta can find it, and sets `--theme="Sorbet"`
+in `~/.config/bat/config` (backup in `config.bak`).
+
+```bash
+./bat/install.sh
+batcat README.md
+```
+
+### delta
+
+`delta/sorbet.gitconfig` colours [delta](https://github.com/dandavison/delta),
+the git diff pager: removed lines in ![#FF9FBC](https://placehold.co/12x12/ff9fbc/ff9fbc.png) `#FF9FBC` and added lines in
+![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` on the container ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`, changed words on a solid block of
+those two colours with ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A` text, the same as Neovim's diff highlights;
+file names in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, commit hashes in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`, hunk headers in
+![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF` inside ![#5E616C](https://placehold.co/12x12/5e616c/5e616c.png) `#5E616C` boxes, line numbers. Code inside the diff
+uses the bat theme above, so install that first. `install.sh` copies the file
+to `~/.config/delta/` and prints the `[include]` to add to `~/.gitconfig`; it
+never edits that file.
+
+```bash
+./delta/install.sh
+```
+
+```ini
+# ~/.gitconfig
+[include]
+    path = ~/.config/delta/sorbet.gitconfig
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+```
+
+### lazygit
+
+`lazygit/sorbet.yml` holds only the `gui.theme` block: active border in
+![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, inactive borders in ![#5E616C](https://placehold.co/12x12/5e616c/5e616c.png) `#5E616C`, the selected line on ![#1A1727](https://placehold.co/12x12/1a1727/1a1727.png) `#1A1727`,
+![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3` and ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` marks for cherry-picked and base commits,
+unstaged changes in ![#FF9FBC](https://placehold.co/12x12/ff9fbc/ff9fbc.png) `#FF9FBC`, author names in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`. lazygit reads one
+config file, so instead of replacing your `~/.config/lazygit/config.yml` the
+installer drops the theme beside it and `zsh/sorbet.zsh` sets `LG_CONFIG_FILE`
+to both, your file first, so the colours win and your keybindings stay.
+
+```bash
+./lazygit/install.sh
+exec zsh
+```
+
+Without the zsh layer, export it yourself:
+`LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/sorbet.yml"`.
+
+### Helix
+
+`helix/sorbet.toml` is the Neovim colorscheme for [Helix](https://helix-editor.com/):
+same syntax roles, editor on ![#05080A](https://placehold.co/12x12/05080a/05080a.png) `#05080A`, status line and popups on ![#121019](https://placehold.co/12x12/121019/121019.png) `#121019`,
+cursor and current line number in ![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3`, the mode shown as a solid
+![#B2FFF3](https://placehold.co/12x12/b2fff3/b2fff3.png) `#B2FFF3` / ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` / ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3` block. `install.sh` copies it to
+`~/.config/helix/themes/`.
+
+```bash
+./helix/install.sh
+# ~/.config/helix/config.toml:  theme = "sorbet"
+```
+
 ### zsh
 
 `zsh/sorbet.zsh` is the rice part of the shell only: `LS_COLORS` (also used by
 lsd for file names and by the completion menu), mint / lime / lemon colours
-for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases
-and the starship prompt. Your own `~/.zshrc` stays private and sources it.
+for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases,
+the lazygit theme file and the starship prompt. Your own `~/.zshrc` stays private and sources it.
 
 Needs zsh + [oh-my-zsh](https://ohmyz.sh/). `install.sh` clones the two
 plugins if missing and appends one `source` line to `~/.zshrc` (backup in
@@ -507,6 +744,26 @@ reboot
 ./nvim/install.sh
 mkdir -p ~/.config/btop/themes && cp btop/Sorbet.theme ~/.config/btop/themes/
 
+./starship/install.sh
+./bat/install.sh
+./delta/install.sh          # then the [include] it prints, in ~/.gitconfig
+./lazygit/install.sh
+./helix/install.sh          # then theme = "sorbet" in helix/config.toml
+
+# other terminals, one include line each (see Terminal extras above)
+./kitty/install.sh
+./alacritty/install.sh
+./wezterm/install.sh
+./ghostty/install.sh
+
+# gtk + qt apps (see GTK and Qt apps above)
+./gtk/install.sh
+./qt/install.sh             # then qt6ct → Color scheme → Sorbet
+
+# obsidian + discord, both halves in one file (see above)
+./obsidian/install.sh ~/path/to/vault
+./discord/install.sh
+
 # wallpaper
 # Settings → Wallpaper → Add image → a file from backgrounds/ (see Icons and wallpaper above)
 
@@ -537,8 +794,11 @@ It backs up every file it replaces, then:
   The terminal scheme and icon theme are only replaced when the current one is
   not already a Sorbet variant, so a dimmer text variant or another icon colour
   survives. Icons stay as they are until `./icons/install.sh` has run.
-- runs the fastfetch, lsd, Neovim and Claude Desktop installers and sets
-  btop's `color_theme`
+- runs the fastfetch, lsd, bat, starship, delta, lazygit, kitty, Alacritty,
+  WezTerm, Ghostty, Helix, GTK, Qt, Discord, Neovim and Claude Desktop
+  installers and sets btop's `color_theme`. The terminal, editor and Qt
+  installers only copy theme files; the include line you added once stays,
+  switch it by hand when the file name differs between rices
 - moves every other rice's LazyVim spec from `~/.config/nvim/lua/plugins/` to
   `~/.config/nvim/rice-off/` (LazyVim loads every spec there and the last
   colorscheme wins); your own specs stay
@@ -555,6 +815,7 @@ The GUI steps it cannot do are printed at the end:
 4. Settings → Wallpaper → a file from `backgrounds/`
 5. Claude Desktop: Ctrl+Shift+T → `cosmic-sorbet`, Appearance → Dark
 6. `exec zsh`, restart Neovim (`:Lazy clean` drops plugins only the old specs used)
+7. Obsidian: `./obsidian/install.sh <vault>`; delta: the `[include]` path in `~/.gitconfig`
 
 Skip 1 and 2 when that slot already holds Sorbet. The first time on this rice,
 run [Setup](#setup) once for the fonts, icons and cursor.
@@ -579,6 +840,14 @@ puts the Pop cursor back.
 | [lsd](https://github.com/lsd-rs/lsd) | `ls` with icons and colours |
 | [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info |
 | [btop](https://github.com/aristocratos/btop) | Resource monitor |
+| [starship](https://starship.rs/) | Prompt |
+| [bat](https://github.com/sharkdp/bat) | `cat` with syntax highlighting |
+| [delta](https://github.com/dandavison/delta) | git diff pager |
+| [lazygit](https://github.com/jesseduffield/lazygit) | git TUI |
+| [Helix](https://helix-editor.com/) | Editor |
+| [kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [WezTerm](https://wezterm.org/), [Ghostty](https://ghostty.org/) | Other terminals |
+| [qt6ct](https://github.com/trialuser02/qt6ct) | Qt colour scheme |
+| [Vencord](https://vencord.dev/) / [Vesktop](https://github.com/Vencord/Vesktop) | Discord theme host |
 | [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes) | Icon pack (Cosmic-Sorbet), recolored from [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa) |
 | [Oxygen-Cursors](https://github.com/wo2ni/Oxygen-Cursors) | Cursor, recoloured to the icon colours |
 
