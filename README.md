@@ -13,6 +13,7 @@ the light half is [cosmic-sorbetday-theme](https://github.com/atraxsrc/cosmic-so
 ![COSMIC](https://img.shields.io/badge/COSMIC-1.0.0-baf7b5?style=for-the-badge)
 ![Sorbet](https://img.shields.io/badge/Theme-Sorbet-05080a?style=for-the-badge&labelColor=b2fff3)
 ![Firefox](https://img.shields.io/badge/Firefox-Sorbet-b2fff3?style=for-the-badge&logo=firefox-browser&logoColor=white)
+[![Gallery](https://img.shields.io/badge/Gallery-All_rices-b2fff3?style=for-the-badge)](https://atraxsrc.github.io/cosmic-rices/)
 ![License](https://img.shields.io/badge/License-MIT-8a8d97?style=for-the-badge)
 
 </div>
