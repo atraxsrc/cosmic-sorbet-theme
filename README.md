@@ -136,7 +136,7 @@ it with pitch text on top.
 │   ├── Sorbet.conf              # qt5ct / qt6ct colour scheme
 │   └── install.sh
 ├── starship
-│   ├── starship.toml            # prompt, palette colours, clock on the right
+│   ├── starship.toml            # prompt, palette colours
 │   └── install.sh
 ├── telegram
 │   ├── colors.tdesktop-theme    # Telegram Desktop colour scheme (source)
@@ -521,8 +521,7 @@ kitty and Alacritty have no such switch; include the other file instead.
 `starship/starship.toml` is close to the defaults with the palette declared
 once as `[palettes.sorbet]` and used by name: the directory in ![#DFBAFF](https://placehold.co/12x12/dfbaff/dfbaff.png) `#DFBAFF`,
 the branch in ![#FFF6C3](https://placehold.co/12x12/fff6c3/fff6c3.png) `#FFF6C3`, ![#FFC79B](https://placehold.co/12x12/ffc79b/ffc79b.png) `#FFC79B` for a dirty tree, a ![#BAF7B5](https://placehold.co/12x12/baf7b5/baf7b5.png) `#BAF7B5` prompt
-character that turns ![#FF9FBC](https://placehold.co/12x12/ff9fbc/ff9fbc.png) `#FF9FBC` after a failed command, a dim `HH:MM` clock on
-the right. Modules it does not style keep their defaults, which use the ANSI
+character that turns ![#FF9FBC](https://placehold.co/12x12/ff9fbc/ff9fbc.png) `#FF9FBC` after a failed command. Modules it does not style keep their defaults, which use the ANSI
 slots the COSMIC Terminal scheme colours. `zsh/sorbet.zsh` already runs
 `starship init`. `install.sh` backs up any existing `~/.config/starship.toml`
 to `starship.toml.bak`.
