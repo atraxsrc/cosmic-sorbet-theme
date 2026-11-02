@@ -43,7 +43,7 @@ flowchart LR
 - [x] `./icons/install.sh` for the **Cosmic-Sorbet** icons, `./cosmic/install.sh` for fonts and the terminal look
 - [x] `./zsh/install.sh`, `./lsd/install.sh`, `./fastfetch/install.sh`
 - [x] Cursor: Oxygen-Sorbet-Mint
-- [x] Wallpaper: `backgrounds/sorbet-pyramid.jpg`
+- [x] Wallpaper: `backgrounds/sorbet-anime.png`
 - [ ] Screenshot for the README
 
 ## The baseline every rice shares
