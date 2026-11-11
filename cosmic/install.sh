@@ -18,6 +18,6 @@ done
 
 cat <<'EOF'
 
-Done. Needs the Maple fonts and Cosmic-Sorbet icons (./icons/install.sh) installed, and the Sorbet
+Done. Needs the fonts (./fonts/install.sh) and Cosmic-Sorbet icons (./icons/install.sh) installed, and the Sorbet
 terminal scheme imported, or COSMIC falls back to its defaults.
 EOF
